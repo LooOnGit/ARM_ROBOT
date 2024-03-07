@@ -1,0 +1,6 @@
+path: D:\Dev_Vision\Project\dataset
+train: train/
+val: val/
+
+nc: 6
+names: ['red_start', 'orange_start', 'blue_start', 'red_stop', 'orange_stop', 'blue_stop']
