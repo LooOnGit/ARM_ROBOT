@@ -1,10 +1,10 @@
 
 import cv2
 from ultralytics import YOLO
-model = YOLO("D:\\Dev_Vision\\Project\\runs\detect\\train\\weights\\best.pt")
+model = YOLO("D:\\Dev_Vision\\ARM_ROBOT\\runs\\detect\\train4\\\weights\\best.pt")
 
-# cap = cv2.VideoCapture("D:\\Dev_Vision\\Project\\WIN_20240114_14_02_53_Pro.mp4")
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture("D:\\Dev_Vision\\Project\\WIN_20240121_14_21_56_Pro.mp4")
+#cap = cv2.VideoCapture(1)
 
 while cap.isOpened():
     success, frame = cap.read()
