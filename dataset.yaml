@@ -3,4 +3,4 @@ train: train/
 val: val/
 
 nc: 4
-names: ['violet', 'green', 'blue', 'red']
+names: ['Violet','Blue','Green','Red']
