@@ -1,0 +1,21 @@
+Index: test_camera.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport cv2\r\nfrom ultralytics import YOLO\r\n\r\ncap = cv2.VideoCapture(\"D:\\\\Dev_Vision\\\\video\\\\all.mp4\")\r\n# cap = cv2.VideoCapture(1)\r\nmodel = YOLO(\"D:\\\\Dev_Vision\\\\ARM_ROBOT\\\\runs\\\\detect\\\\train\\\\weights\\\\best.pt\")\r\n\r\nwhile cap.isOpened():\r\n    success, frame = cap.read()\r\n    if success:\r\n        results = model(frame)\r\n        annotated_frame = results[0].plot()\r\n        cv2.imshow(\"YOLOv8 Inference\", annotated_frame)\r\n        for result in results:\r\n            print(\"class\", result.boxes.cls)\r\n            print(\"xyxy\", result.boxes.xyxy)\r\n            print(\"conf\", result.boxes.conf)\r\n        if cv2.waitKey(1) & 0xFF == ord(\"q\"):\r\n            break\r\n    else:\r\n        break\r\ncap.release()\r\ncv2.destroyAllWindows()\r\n
+===================================================================
+diff --git a/test_camera.py b/test_camera.py
+--- a/test_camera.py	
++++ b/test_camera.py	
+@@ -2,9 +2,9 @@
+ import cv2
+ from ultralytics import YOLO
+ 
+-cap = cv2.VideoCapture("D:\\Dev_Vision\\video\\all.mp4")
+-# cap = cv2.VideoCapture(1)
+-model = YOLO("D:\\Dev_Vision\\ARM_ROBOT\\runs\\detect\\train\\weights\\best.pt")
++# cap = cv2.VideoCapture("D:\\Dev_Vision\\video\\all.mp4")
++cap = cv2.VideoCapture(1)
++model = YOLO("best.pt")
+ 
+ while cap.isOpened():
+     success, frame = cap.read()
