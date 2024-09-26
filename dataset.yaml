@@ -1,0 +1,6 @@
+path: D:\Dev_Vision\ARM_ROBOT\dataset
+train: train/
+val: val/
+
+nc: 4
+names: ['Violet','Blue','Green','Red']
